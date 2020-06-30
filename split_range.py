@@ -13,7 +13,7 @@ import shutil
 
 def split(i_path, o_path):
     zoom = 17
-    for index in range(2, 21, 1):
+    for index in range(1, 21, 1):
         print (index)
         output_path = os.path.join(o_path, str(index))
         if not os.path.exists(output_path):
