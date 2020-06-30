@@ -12,14 +12,15 @@ import shutil
 
 
 def split(i_path, o_path):
-    z = 17
-    for index in range(1, 21, 1):
+    zoom = 17
+    for index in range(2, 21, 1):
         print (index)
         output_path = os.path.join(o_path, str(index))
         if not os.path.exists(output_path):
             os.mkdir(output_path)
-        min_x, min_y = util.get_tile_num(config.range[z][index][1], config.range[z][index][2], z)
-        max_x, max_y = util.get_tile_num(config.range[z][index][0], config.range[z][index][3], z)
+        print(zoom)
+        min_x, min_y = util.get_tile_num(config.range[zoom][index][1], config.range[zoom][index][2], zoom)
+        max_x, max_y = util.get_tile_num(config.range[zoom][index][0], config.range[zoom][index][3], zoom)
         for root, dirs, files in os.walk(i_path):
             for name in files:
                 if os.path.splitext(name)[-1] == ".png":
